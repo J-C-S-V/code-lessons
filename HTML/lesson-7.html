@@ -3,80 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Codi Origin - HTML Attributes</title>
+    <title>Codi Origin - Image Tag</title>
+    <!-- https://squoosh.app/ -->
   </head>
   <body>
-<a href="https://example.com" target="_blank" rel="noopener noreferrer">
-    Visit Example
-</a>
-
-<img
-    src="images/cat.jpg"
-    alt="Orange tabby cat sleeping on a couch"
-    width="400"
-    height="300"
-/>
-
-<form action="/submit-contact-form" method="post">
-    ...
-</form>
-
-<input
-    type="email"
-    placeholder="Enter your email"
-    required
-/>
-
-<textarea
-    rows="5"
-    cols="40"
-    placeholder="Type your message here..."
-></textarea>
-
-<select multiple>
-    <option>HTML</option>
-    <option>CSS</option>
-    <option>JavaScript</option>
-</select>
-
-<option value="us" selected>United States</option>
-
-<button type="submit">
-    Send Message
-</button>
-
-<video
-    controls
-    poster="images/video-thumbnail.jpg"
-    width="640"
-    height="360"
->
-    <source src="videos/demo.mp4" type="video/mp4">
-</video>
-
-<audio controls>
-    <source src="audio/podcast-episode.mp3" type="audio/mpeg">
-</audio>
-
-<iframe
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-    sandbox="allow-scripts allow-same-origin"
-></iframe>
-
-<script src="js/main.js" defer></script>
-
-<link href="styles.css" rel="stylesheet">
-
-<meta charset="UTF-8">
-
-<ol start="5" reversed>
-    <li>Fifth item</li>
-    <li>Fourth item</li>
-    <li>Third item</li>
-</ol>
-
-<details open>
-    <summary>Shipping Information</summary>
-    Orders are processed within 1-2 business days.
-</details>  </body>
+    <img
+      width="480"
+      height="320"
+      loading="lazy"
+      src="small.jpg"
+      srcset="https://small-480.png 480w, https://medium-800.png 800w, large-1200.png 1200w"
+      sizes="100vw"
+      alt="…"
+    />
+  </body>
 </html>
