@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Capstone project demonstrating HTML5 concepts: anchors, buttons, protocols, clickable images, and more."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Portfolio | HTML5 Capstone</title>
+    <!--
+    Concepts demonstrated in this page:
+    - HTML5 boilerplate & Emmet
+    - Semantic structure (header, nav, main, section, aside, footer)
+    - All important tags (h1-h6, p, a, img, ul, ol, li, div, span, button, ...)
+    - Global & element-specific attributes
+    - Responsive images (srcset + sizes + width/height to prevent CLS)
+    - Anchor vs Button
+    - Hyperlinks: external, same-website (projects.html), internal sections (#id)
+    - Special protocols: mailto, tel, sms, wa.me
+    - Making an image clickable
+  --></head>
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header>
+      <h1>Juan Sanchez</h1>
+      <nav>
+        <ul>
+          <!-- Internal (same-document) links: navigate to sections -->
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <!-- Same-website link: opens another page of this site -->
+          <li><a href="projects.html">All Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+      <!-- About Section -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Hello! I'm a web developer who loves
+          <span style="font-weight: bold">semantic HTML5</span>. This page is built with pure HTML -
+          no CSS or JavaScript required.
+        </p>
+
+        <!-- Clickable image: wrapping <a> around <img> makes the image a hyperlink -->
+        <a
+          href="https://www.linkedin.com/in/terence-tao-6291246/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop"
+            srcset="
+              https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=480&h=480&fit=crop    480w,
+              https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop    800w,
+              https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=1200&fit=crop 1200w
+            "
+            sizes="(max-width: 600px) 100vw,
+                 (max-width: 900px) 50vw,
+                 800px"
+            alt="Portrait of Juan Sanchez - click to visit LinkedIn profile"
+            width="800"
+            height="800"
+            loading="lazy"
+          />
+        </a>
+        <p>
+          <small
+            >Click my photo to see my LinkedIn (external link). The image uses
+            <code>srcset</code> and explicit dimensions to prevent Cumulative Layout Shift
+            (CLS).</small
+          >
+        </p>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <h3>Programming Languages</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+        </ul>
+
+        <h3>Tools &amp; Workflow</h3>
+        <ol>
+          <li>VS Code</li>
+          <li>Git &amp; GitHub</li>
+          <li>Chrome DevTools</li>
+        </ol>
+
+        <h4>Soft Skills</h4>
+        <h5>Communication</h5>
+        <h6>Public speaking &amp; writing</h6>
+        <p>Clear communication is key to successful projects.</p>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>Featured Projects</h2>
+
+        <div class="project">
+          <h3>Project Alpha</h3>
+          <p>A semantic HTML landing page with responsive images.</p>
+          <!-- Regular image, not clickable -->
+          <img
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop"
+            alt="Screenshot of Project Alpha"
+            width="400"
+            height="300"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="project">
+          <h3>Project Beta</h3>
+          <p>Contact integration using special protocols.</p>
+          <!-- Clickable image: wraps the project screenshot in a link to the project details page -->
+          <a href="projects.html#beta">
+            <img
+              src="https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=400&h=300&fit=crop"
+              alt="Go to Project Beta details"
+              width="400"
+              height="300"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <!-- Button element: used for actions (NOT navigation) -->
+        <button type="button" onclick="alert('More projects coming soon!')">
+          Show More Projects
+        </button>
+        <p>
+          <em
+            >☝️ This is a <code>&lt;button&gt;</code> (used for an action). The navigation above
+            uses <code>&lt;a&gt;</code> elements.</em
+          >
+        </p>
+      </section>
+
+      <!-- Aside: Contact with all special protocols -->
+      <aside id="contact">
+        <h2>Get in Touch</h2>
+        <ul>
+          <!-- mailto: -->
+          <li>Email: <a href="mailto:juan.sanchez@example.com">juan.sanchez@example.com</a></li>
+          <!-- tel: -->
+          <li>Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+          <!-- sms: -->
+          <li>SMS: <a href="sms:+15551234567?body=Hi%20Juan">Send a text message</a></li>
+          <!-- WhatsApp click-to-chat -->
+          <li>
+            WhatsApp:
+            <a href="https://wa.me/15551234567?text=Hello%20Juan" target="_blank" rel="noopener"
+              >Chat on WhatsApp</a
+            >
+          </li>
+          <!-- External link (opens in new tab) -->
+          <li>
+            GitHub:
+            <a href="https://github.com/juansanchez" target="_blank" rel="noopener"
+              >github.com/juansanchez</a
+            >
+          </li>
+          <!-- Same-website link -->
+          <li><a href="projects.html">View all projects (same website)</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <p>&copy; 2025 Juan Sanchez. Built with pure HTML5.</p>
+      <!-- Internal link back to top -->
+      <p><a href="#">Back to top</a></p>
+    </footer>
+
+    <!--
+    DEVTOOLS TASKS:
+    1. Open the page with Live Server (or just as a local file).
+    2. F12 → Network tab: reload to see HTTP request/response for index.html and images.
+    3. Console: type document.querySelectorAll('a') to see all anchors.
+    4. Inspect the <button> vs an <a> - note the different default styles and behaviors.
+    5. Check the “Styles” panel to see the browser's agent stylesheet.
+  --></body>
+</html>
