@@ -3,9 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Codi Origin - Video, Audio, and iframe tags</title>
   </head>
   <body>
-    <img src="" alt="" />
+    <video
+      src="my-video.mp4"
+      controls
+      autoplay
+      width="200"
+      loop
+      muted
+      poster="poster-image.jpg"
+      preload="metadata"
+      width="200"
+      height="200"
+    >
+      Your browser does not support the video tag.
+    </video>
+    <!-- Video with multiple sources -->
+    <video controls poster="poster.jpg">
+      <source src="video.mp4" type="video/mp4" />
+      <source src="video.webm" type="video/webm" />
+      <p>
+        Your browser doesn't support HTML5 video. Here is a
+        <a href="video.mp4">link to the video</a> instead.
+      </p>
+    </video>
+    <!-- Video with captions -->
+    <video controls>
+      <source src="talk.mp4" type="video/mp4" />
+      <track src="captions-en.vtt" kind="subtitles" srclang="en" label="English" default />
+      <track src="captions-es.vtt" kind="subtitles" srclang="es" label="Español" />
+    </video>
+    <!-- Real World Example - Background Video -->
+    <section class="hero">
+      <video autoplay muted loop playsinline>
+        <source src="bg.webm" type="video/webm" />
+        <source src="bg.mp4" type="video/mp4" />
+      </video>
+      <h1>Welcome to My Portfolio</h1>
+    </section>
+    <!-- Always include playsinline for iOS devices to prevent automatic fullscreen. -->
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <audio src="podcast.mp3" controls>Your browser does not support the audio element.</audio>
+    <!-- Audio with multiple sources/formats -->
+    <audio controls>
+      <source src="music.mp3" type="audio/mpeg" />
+      <source src="music.ogg" type="audio/ogg" />
+      <p>Download <a href="music.mp3">the song</a>.</p>
+    </audio>
+
+    <!-- No relationship between the text and the player -->
+    <p>Listen to my latest podcast episode:</p>
+    <audio controls src="episode-1.mp3"></audio>
+
+    <!-- Text and player are semantically one unit -->
+    <figure>
+      <figcaption>Listen to my latest podcast episode:</figcaption>
+      <audio controls src="episode-1.mp3"></audio>
+    </figure>
+
+    <figure>
+      <img src="chart.png" alt="Q3 revenue by region" />
+      <figcaption>Fig. 1 — Q3 revenue breakdown across all regions.</figcaption>
+    </figure>
+    <figure>
+      <blockquote>The only way to do great work is to love what you do.</blockquote>
+      <figcaption>— Steve Jobs, Stanford Commencement, 2005</figcaption>
+    </figure>
+
+    <figure>
+      <figcaption>Reversing a string in Python:</figcaption>
+      <pre>
+        <code>
+  text = "hello"
+  print(text[::-1])  # olleh
+        </code>
+      </pre>
+    </figure>
+    <figure>
+      <img src="q3-revenue-chart.svg" alt="Bar chart showing Q3 revenue by region" />
+      <figcaption>Fig. 3 — Q3 revenue by region. APAC led with $4.2M.</figcaption>
+    </figure>
   </body>
 </html>
