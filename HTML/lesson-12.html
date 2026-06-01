@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codi Origin - HTML Forms</title>
+  </head>
+  <body>
+    <form action="https://formspree.io/f/xyz" method="post">
+      <label for="username">Username:</label>
+      <!-- Input Fields -->
+      <!-- text	Generic text	type="text"
+email	Email address (validated)	type="email"
+password	Masked input	type="password"
+tel	Telephone number	type="tel"
+url	Web address	type="url"
+search	Search query	type="search"
+number	Numeric input with spinners	type="number" min="0" max="100" step="5" -->
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter your username"
+        required
+        maxlength="20"
+      />
+      <br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <br /><br />
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+        required
+      />
+      <br /><br />
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" placeholder="123-456-7890" />
+      <br /><br />
+      <label for="age">Age:</label>
+      <input
+        type="number"
+        id="age"
+        name="age"
+        placeholder="Enter your age"
+        min="0"
+        max="120"
+        required
+      />
+      <br /><br />
+      <label for="website">Website:</label>
+      <input type="url" id="website" name="website" placeholder="https://example.com" />
+      <br /><br />
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search" placeholder="Search..." />
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+    <br /><br /><br />
+    <!-- All radio buttons in a group must share the same name. -->
+    <!-- If different, you can check both at the same time: -->
+    <!-- The name also becomes the key sent to the server. -->
+    <!-- | id | first_name | contact_method |
+        | -- | ---------- | -------------- |
+        | 1  | Alice      | phone          |
+        | 2  | Bob        | email          |
+        -->
+    <form action="https://formspree.io/f/xyz" method="post">
+      <fieldset>
+        <legend>Preferred contact method:</legend>
+        <input type="radio" id="contact-email" name="contact-method" value="email" checked />
+        <label for="contact-email">Email</label>
+
+        <input type="radio" id="contact-phone" name="contact-method" value="phone" />
+        <label for="contact-phone">Phone</label>
+
+        <input type="radio" id="contact-none" name="contact-method" value="none" />
+        <label for="contact-none">None</label>
+      </fieldset>
+      <br />
+      <!-- Checkboxes -->
+      <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked />
+      <label for="newsletter">Subscribe to newsletter</label>
+      <br />
+      <input type="checkbox" id="terms" name="terms" value="agree" required />
+      <label for="terms">I agree to the terms and conditions</label>
+      <br /><br />
+      <!-- Dropdowns -->
+      <label for="country">Country:</label>
+      <select id="country" name="country" required>
+        <option value="" disabled selected>Choose your country</option>
+        <option value="co">Colombia</option>
+        <option value="mx">Mexico</option>
+        <option value="us">United States</option>
+      </select>
+      <br /><br />
+      <!-- Group options  -->
+      <select name="food">
+        <optgroup label="Fruits">
+          <option value="apple">Apple</option>
+          <option value="banana">Banana</option>
+        </optgroup>
+        <optgroup label="Vegetables">
+          <option value="carrot">Carrot</option>
+          <option value="broccoli">Broccoli</option>
+        </optgroup>
+      </select>
+      <br />
+      <br />
+      <!-- Text area -->
+      <label for="message">Your message:</label><br />
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        cols="40"
+        placeholder="Type here..."
+      ></textarea>
+
+      <br /><br />
+      <!-- File upload -->
+      <label for="resume">Upload your resume (PDF):</label>
+      <input type="file" id="resume" name="resume" accept=".pdf" multiple />
+      <br /><br />
+      <!-- Hidden inputs -->
+      <!-- Invisible to users but sent with the form – useful for tracking -->
+      <input type="hidden" name="form_id" value="contact-form-v1" />
+      <button type="submit">Send Message</button>
+      <button type="reset">Clear Form</button>
+      <input type="submit" value="Submit" /><br /><br />
+      <!-- ZIP Code -->
+      <label for="zip">ZIP Code:</label>
+      <input type="text" name="zip" pattern="\d{5}" placeholder="12345" required /><br /><br />
+      <label for="upload">Upload Progress:</label>
+      <progress id="upload" value="70" max="100"></progress>
+      <script>
+        document.getElementById('upload').value = 20;
+      </script>
+      <br /><br />
+      <label for="disk">Disk Usage:</label>
+      <meter id="disk" min="0" max="100" value="75"></meter><br /><br />
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" /><br /><br />
+      <label for="meeting">Meeting Time:</label>
+      <input type="time" id="meeting" /><br /><br />
+      <label for="appointment">Appointment:</label>
+      <input type="datetime-local" id="appointment" /><br /><br />
+      <label for="billing">Billing Month:</label>
+      <input type="month" id="billing" /><br /><br />
+      <label for="schedule">Work Week:</label>
+      <input type="week" id="schedule" /><br /><br />
+      <label for="theme">Theme Color:</label>
+      <input type="color" id="theme" />
+    </form>
+    <br /><br />
+  </body>
+</html>
