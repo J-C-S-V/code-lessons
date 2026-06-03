@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codi Origin - HTML Tables</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      caption {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Monthly Sales Report - 2026
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Month</th>
+          <th scope="col">Units Sold</th>
+          <th scope="col">Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">January</th>
+          <td>340</td>
+          <td>$8,500</td>
+        </tr>
+        <tr>
+          <th scope="row">February</th>
+          <td>290</td>
+          <td>$7,250</td>
+        </tr>
+        <!-- colspan merges columns -->
+        <tr>
+          <td colspan="2">This cell spans two columns</td>
+          <td>Normal cell</td>
+        </tr>
+        <!-- rowspan merges rows -->
+        <tr>
+          <td rowspan="2">Spans two rows</td>
+          <td>Row 1, Col 2</td>
+          <td>Row 1, Col 3</td>
+        </tr>
+        <tr>
+          <td>Row 2, Col 2</td>
+          <td>Row 2, Col 3</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Totals</th>
+          <td>630</td>
+          <td>$15,750</td>
+        </tr>
+      </tfoot>
+    </table>
+    <!-- Real example colspan -->
+    <!-- <table>
+      <tr>
+        <th>Name</th>
+        <th colspan="2">Contact</th>
+      </tr>
+      <tr>
+        <td>Alex</td>
+        <td>Email</td>
+        <td>alex@example.com</td>
+      </tr>
+    </table> -->
+  </body>
+</html>
+
+<!-- Responsive with wrapper -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* The wrapper — allows horizontal scroll */
+      .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+      }
+
+      /* The table — min-width prevents columns from collapsing */
+      table {
+        width: 100%;
+        min-width: 580px; /* adjust to fit your columns */
+        border-collapse: collapse;
+      }
+
+      /* Keep cells on one line so they don't wrap inside columns */
+      th,
+      td {
+        white-space: nowrap;
+        padding: 10px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Wrap your <table> in this div -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>SKU</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wireless Headphones</td>
+            <td>WH-4420</td>
+            <td>$129.99</td>
+            <td>In stock</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
